@@ -3,7 +3,6 @@ using namespace std;
 
 const int ALPHABET_SIZE = 26;
 
-// trie node
 struct TrieNode
 {
 	struct TrieNode *children[ALPHABET_SIZE];
@@ -21,10 +20,7 @@ struct TrieNode *getNode(void)
  
     return pNode;
 }
- 
-// If not present, inserts key into trie
-// If the key is prefix of trie node, just
-// marks leaf node
+
 void insert(struct TrieNode *root, string key)
 {
     struct TrieNode *pCrawl = root;
@@ -38,7 +34,6 @@ void insert(struct TrieNode *root, string key)
         pCrawl = pCrawl->children[index];
     }
  
-    // mark last node as leaf
     pCrawl->isEndOfWord = true;
 }
 
@@ -67,13 +62,10 @@ int main()
  
     struct TrieNode *root = getNode();
  
-    // Construct trie
     for (int i = 0; i < n; i++)
         insert(root, keys[i]);
  
-    // Search for different keys
     char output[][32] = {"Not present in trie", "Present in trie"};
-
     cout<<"the"<<" --- "<<output[search(root, "the")]<<endl;
     cout<<"these"<<" --- "<<output[search(root, "these")]<<endl;
     cout<<"their"<<" --- "<<output[search(root, "their")]<<endl;
