@@ -1,6 +1,3 @@
-// C++ implementation of search and insert
-// operations on Trie
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -10,13 +7,9 @@ const int ALPHABET_SIZE = 26;
 struct TrieNode
 {
 	struct TrieNode *children[ALPHABET_SIZE];
-
-	// isEndOfWord is true if the node represents
-	// end of a word
 	bool isEndOfWord;
 };
 
-// Returns new trie node (initialized to NULLs)
 struct TrieNode *getNode(void)
 {
     struct TrieNode *pNode =  new TrieNode;
@@ -64,12 +57,9 @@ bool search(struct TrieNode *root, string key)
  
     return (pCrawl->isEndOfWord);
 }
- 
-// Driver
+
 int main()
 {
-    // Input keys (use only 'a' through 'z'
-    // and lower case)
     string keys[] = {"the", "a", "there",
                     "answer", "any", "by",
                      "bye", "their" };
@@ -83,8 +73,7 @@ int main()
  
     // Search for different keys
     char output[][32] = {"Not present in trie", "Present in trie"};
- 
-    // Search for different keys
+
     cout<<"the"<<" --- "<<output[search(root, "the")]<<endl;
     cout<<"these"<<" --- "<<output[search(root, "these")]<<endl;
     cout<<"their"<<" --- "<<output[search(root, "their")]<<endl;
