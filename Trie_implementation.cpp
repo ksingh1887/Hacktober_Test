@@ -66,7 +66,6 @@ int main()
         insert(root, keys[i]);
  
     char output[][32] = {"Not present in trie", "Present in trie"};
- 
     cout<<"the"<<" --- "<<output[search(root, "the")]<<endl;
     cout<<"these"<<" --- "<<output[search(root, "these")]<<endl;
     cout<<"their"<<" --- "<<output[search(root, "their")]<<endl;
