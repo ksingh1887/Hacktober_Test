@@ -70,5 +70,6 @@ int main()
     cout<<"these"<<" --- "<<output[search(root, "these")]<<endl;
     cout<<"their"<<" --- "<<output[search(root, "their")]<<endl;
     cout<<"thaw"<<" --- "<<output[search(root, "thaw")]<<endl;
+    cout<<endl;
     return 0;
 }
